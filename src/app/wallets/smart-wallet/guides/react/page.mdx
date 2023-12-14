@@ -171,9 +171,9 @@ function Example() {
 
 Now that you have connected your smart wallet to your app, you can use it to send transactions and interact with smart contracts.
 
-### 5.(a) Claim an NFT and fetch owned NFTs
-
 Deploy a NFT Drop contract from the [explore page](https://thirdweb.com/explore/nft-drop) or build your own [ERC 721](https://eips.ethereum.org/EIPS/eip-721) compatible contract using the [Solidity SDK](/solidity).
+
+use the dashboard to upload some NFTs that can be claimed with the smart wallet.
 
 To claim an NFT, we will use the [useContract](/references/react/useContract) hook to fetch the contract and the [Web3Button](/react/react.web3button) component to send the transaction.
 
@@ -187,7 +187,7 @@ export default function MyComponent() {
   const smartWalletAddress = useAddress();
   // Fetch owned NFTs
   const { contract } = useContract("0x..."); // your nft drop contract
-  const { data, isLoading } = useOwnedNFTs(contract, smartWalletAddress);
+  const { data, isLoading } = useOwnedNFTs(contract smartWalletAddress);
   // Mint a new NFT
   return (
     <Web3Button
